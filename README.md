@@ -2,8 +2,8 @@
 
 ## Components
 
-* generating announcements with Ownership Token
-* validating Ownership Tokens in MRT dumps from vantage points
+* generating announcements with Ownership Token (agent)
+* validating Ownership Tokens in MRT dumps from vantage points (registrar)
 
 ### Generating announcements
 
