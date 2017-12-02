@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 import sys
+import ipaddress
 from optparse import OptionParser
 from datetime import *
 from mrtparse import *
@@ -24,6 +25,11 @@ def parse_bgp4mp(m, askeys):
         for n in m.bgp.msg.nlri:
             plen = n.plen - (((len(n.label) * 3 + 8) * 8) if n.label else 0)
             prefix = "%s/%d" % (n.prefix, plen)
+            try:
+                ipaddress.IPv4Network(unicode(prefix))
+            except:
+                continue
+
             if not prefix in askeys:
                 askeys[prefix] = []
             askeys[prefix] += keys
