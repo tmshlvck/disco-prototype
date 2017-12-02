@@ -22,7 +22,7 @@ URLBASE=(
 
 MONTH="2017.07"
 TYPE="UPDATES" # UPDATES or RIBS
-TIME="20170704.2115"
+TIME="20170704.2145"
 
 for b in ${URLBASE[*]}; do
 	n="`echo $b | sed -r 's%http://[^/]+/([^/]+)/.*%\1%'`-${TYPE}-${MONTH}-${TIME}.bz2"
